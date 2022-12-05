@@ -1,0 +1,14 @@
+
+
+.cardd img{
+    width: 350px;
+    height: 350px;
+}
+
+.btn{
+    width: 100%;
+}
+
+.btn:hover{
+    background-color: blueviolet;
+}

@@ -1,0 +1,103 @@
+.gym{
+    display: flex;
+    flex-direction: column-reverse;
+    
+    justify-content: center;    
+}
+
+.gri{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    
+}
+
+
+
+.pic-address{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    padding-left: 50px;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 30px;
+   padding-left: 30px;
+   
+}
+
+
+
+/* for mid leveldisplay */
+
+@media (min-width: 768px) { 
+    .gym{
+        display: flex;
+        flex-direction:row;
+        
+        justify-content: center;    
+    }
+    
+    .gri{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+
+
+    
+    .pic-address{
+        width: 320px;
+        padding-left: 100px;
+        justify-content: center;
+    }
+   
+    
+    
+   
+    
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .gym{
+        display: flex;
+        flex-direction: row;
+        
+        justify-content: center; 
+        padding-left: 10px;
+        
+    }
+    
+    .gri{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+        
+        
+    }
+    
+    
+    
+    .pic-address{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 50px;
+       align-items: center;
+       justify-content: center;
+       margin-bottom: 30px;
+       padding-left: 30px;
+       
+    }
+   
+    
+
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { }
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { }
+
+
