@@ -1,10 +1,37 @@
 import React from 'react';
 import img from './Picture1s.png'
 import './details.css'
+import { useState } from 'react';
 
-const Details = (details) => {
+const Details = ({details}) => {
+   
+    const[breaks, setbreaks] = useState('');
+    
 
-    console.log(details)
+    let total = 0;
+    for(const component of details){
+        total = total + component.time; 
+       
+    }
+   
+    const clickbreakTime = (e) =>{
+
+
+        const newTime = (breaks.concat(e.target.name))
+        setbreaks(newTime)
+
+        
+         
+    }
+
+
+    
+    
+    
+     
+    
+
+    //console.log(details);
     return (
         <div className='details'>
             <div className=' pt-10 md:p-10'>
@@ -51,7 +78,7 @@ const Details = (details) => {
                     </div>
                 </div>
                 </div>
-
+                
     {/* add a break *******timing */}
 
 
@@ -62,25 +89,26 @@ const Details = (details) => {
                     <div className='grid grid-cols-5 h-20 w-96 bg-slate-100 items-center rounded-2xl'>
                         
                         <div className='rounded-full  bg-green-400 h-10 w-10 flex items-center justify-center  text-lg text-white font-semibold hover:bg-sky-700'>
-                            <button className=''>10s</button>
+                            <button name='1' onClick={clickbreakTime}>1M</button>
 
                         </div>
                         <div className='rounded-full  bg-green-400 h-10 w-10 flex items-center justify-center  text-lg text-white font-semibold hover:bg-sky-700'>
-                            <button>20s</button>
+                            <button name='3' onClick={clickbreakTime}> 3M</button>
 
                         </div>
                         <div className='rounded-full  bg-green-400 h-10 w-10 flex items-center justify-center  text-lg text-white font-semibold hover:bg-sky-700'>
-                            <button>20s</button>
+                            <button name='6' onClick={clickbreakTime}>6M</button>
 
                         </div>
                         <div className='rounded-full  bg-green-400 h-10 w-10 flex items-center justify-center  text-lg text-white font-semibold hover:bg-sky-700'>
-                            <button>30s</button>
+                            <button name='8' onClick={clickbreakTime}>8M</button>
 
                         </div>
                         <div className='rounded-full  bg-green-400 h-10 w-10 flex items-center justify-center text-lg text-white font-semibold hover:bg-sky-700'>
-                            <button>40s</button>
+                            <button name='10' onClick={clickbreakTime}>10M</button>
 
                         </div>
+
                     </div>
                     
                 </div>  
@@ -97,7 +125,7 @@ const Details = (details) => {
                                    <h3>exercise time</h3>
                             </div>
                             <div>
-                                <p>12 <span>Minutes</span></p>
+                                <p className='text-success'>{total} <span>Minutes</span></p>
 
                             </div>
                         </div>
@@ -114,7 +142,7 @@ const Details = (details) => {
                                    <h3>break time</h3>
                             </div>
                             <div>
-                                <p>12 <span>Minutes</span></p>
+                                <p className='text-success'>{breaks} <span>Minutes</span></p>
 
                             </div>
                         </div>

@@ -9,9 +9,10 @@ import './gym.css'
 const Gym = () => {
 
 
-    const [components ,  setcomponent] = useState([]);
+    const [components , setcomponent] = useState([]);
 
     const[details , setdetails] = useState([])
+   
 
 
     useEffect(() => {
@@ -21,10 +22,14 @@ const Gym = () => {
 
     }, []);
 
-    const handleaddclick = (components) =>{
+    const handleaddclick = (component) =>{
         //console.log(components);
-        const newdetails = [...details, components]
+        const newdetails = [...details, component]
+        setdetails(newdetails)
     }
+
+    
+   
 
     
 
@@ -36,7 +41,7 @@ const Gym = () => {
                 <div className='gri pl-5 pt-5 bg-base-300 justify-items-center px-5 m-3'>
                     {
                         components.map(component => <Gymcom
-                        
+                        key= {component.id}
                         component = {component}
                         handleaddclick = {handleaddclick}
                         
@@ -54,6 +59,7 @@ const Gym = () => {
             <div>
           <Details
           details ={details}
+         
           
           ></Details>
             </div>
