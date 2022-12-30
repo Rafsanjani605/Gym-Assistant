@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const Details = ({details}) => {
    
-    const[breaks, setbreaks] = useState('');
+    const[breaks, setbreaks] = useState();
     
 
     let total = 0;
@@ -17,12 +17,20 @@ const Details = ({details}) => {
     const clickbreakTime = (e) =>{
 
 
-        const newTime = (breaks.concat(e.target.name))
-        setbreaks(newTime)
-
-        
+    //    const prevState = (breaks.concat(e.target.name))
+    //    setbreaks(prevState)
+       
+    setbreaks(eval(e.target.name))
+    
          
     }
+   
+
+
+    
+
+
+
 
 
     
@@ -89,7 +97,7 @@ const Details = ({details}) => {
                     <div className='grid grid-cols-5 h-20 w-96 bg-slate-100 items-center rounded-2xl'>
                         
                         <div className='rounded-full  bg-green-400 h-10 w-10 flex items-center justify-center  text-lg text-white font-semibold hover:bg-sky-700'>
-                            <button name='1' onClick={clickbreakTime}>1M</button>
+                            <button name ='1' onClick={clickbreakTime}>1M</button>
 
                         </div>
                         <div className='rounded-full  bg-green-400 h-10 w-10 flex items-center justify-center  text-lg text-white font-semibold hover:bg-sky-700'>

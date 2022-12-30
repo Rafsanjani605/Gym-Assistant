@@ -38,7 +38,7 @@ const Gym = () => {
         <div className='gym bg-base-300 px-7'>
             <div>
                 {/* here all cards opens */}
-                <div className='gri pl-5 pt-5 bg-base-300 justify-items-center px-5 m-3'>
+                <div className='gri pl-5 pt-5 bg-base-300 gap-5 justify-items-center px-5 m-3'>
                     {
                         components.map(component => <Gymcom
                         key= {component.id}
